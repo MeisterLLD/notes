@@ -3,7 +3,7 @@
 \entetenote{Calcul de $\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x$ via la loi de Bates}{2}{}
 
 Il est bien connu que $\int_{0}^{+\infty} \frac{\sin(x)}{x} \d x = \frac{\pi}{2}$ est une intégrale semi-convergente au sens de Riemann. Montrons que pour tout $n\in\N^{*}$ on a 
-\[ \ds\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x = \frac{\pi}{4(n-1)!}  \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn}\left( \frac n2 - k \right)\] 
+\[ \ds\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x = \frac{\pi}{2^{n}(n-1)!}  \sum_{k=0}^{\pent{n/2}} (-1)^{k}\binom nk \left( n - 2k \right)^{n-1}\] 
 
 \begin{proof}
   Nous allons utiliser la transformée de Fourier des fonctions $\mathrm L^{2}$ avec la convention suivante : 
@@ -28,7 +28,7 @@ Il est bien connu que $\int_{0}^{+\infty} \frac{\sin(x)}{x} \d x = \frac{\pi}{2}
 
   Enfin, par \eqref{in2} comme $\hat f = 2\pi \hat g$ on récupère 
   \[ I_n = \frac 12 \frac{(2\pi)^{n}}{(2\pi)^{n-1}} \left( \hat g\ast \cdots \ast \hat  g \right)(0)  =  \frac{\pi}{4(n-1)!}  \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn}\left( \frac n2 - k \right) .  \]
-
+  ce qui par symétrie autour de $n/2$ et en factorisant par $\frac 1{2^{n-1}}$ se simplifie en la formule annoncée.
 
 \end{proof}
 
