@@ -1,0 +1,25 @@
+\documentclass{notes}
+\begin{document}
+\entetenote{Une condition suffisante pour être $\mathrm L^{p}$}{1}{}
+Soit $(X,\mathcal A,\mu)$ un espace mesuré. On suppose $\mu$ $\sigma$-finie.  Soit $1< p,q < +\infty$ tels que $\frac 1p + \frac 1q = 1$. Soit $f\colon X\to \R$ mesurable telle que pour tout $g\in \mathrm L^{q}$ on ait $fg$ intégrable. Alors $f\in \mathrm L^{p}$. 
+
+\begin{proof}
+  Le résultat est intéressant car il ne demande pas qu'il existe $C>0$ telle que pour tout $g\in \mathrm L^{q}$, $\left| \int_{X} fg \ \d \mu \right| \leq C\|g\|_{\mathrm L^{q}}$, c'est-à-dire la continuité de la forme linéaire $T_f : g\mapsto \int_X fg \ \d \mu$ sur $\mathrm L^{q}$, ce qui par le théorème de représentation de Riesz (cf. remarque ci-dessous), donnerait bien la conclusion. Montrons en fait que cette continuité a bien lieu avec notre hypothèse. 
+  
+  Comme $\mathrm L^{q}$ est un espace de Banach, on dispose du théorème du graphe fermé. Supposons donc que $(g_n)$ converge vers $0$ dans $\mathrm L^{q}$ \emph{et} que $(T_f(g_n))$ converge. Comme $(g_n)$ converge vers $0$ dans $\mathrm L^{q}$ alors par une réciproque partielle au théorème de convergence dominée de Lebesgue (voir par exemple le théorème IV.9 de \cite{Brezis}), on peut extraire de $(g_n)$ une sous suite, $(g_{\varphi(n)})$ qui converge presque partout vers $0$ et telle qu'il existe $h\in\mathrm L^{q}$ avec $|g_{\varphi(n)}|\leq h$ pour tout $n\in\N$ et presque tout $x\in X$, et donc $|fg_{\varphi(n)}|\leq fh$ qui est intégrable par notre hypothèse. Par convergence dominée, on a alors $T_f(g_{\varphi(n)}) \tendvers{n}{+\infty}{0}$. Mais comme la suite $(T_f(g_n))$ est supposée convergente, alors par unicité sa limite est $0$. Par le théorème du graphe fermé, $T_f$ est une forme linéaire continue sur $\mathrm L^{q}$.
+
+\end{proof}
+
+
+\begin{rem}
+  Il est vrai dans tout espace mesuré que le dual de $\mathrm L^{p}$ est isométriquement isomorphe à $\mathrm L^{q}$ (voir \cite{Folland}) donc il existe $F\in\mathrm L^{p}$ telle que $\int_X Fg\ \d \mu = \int_X fg \ \d \mu$ pour tout $g\in\mathrm L^{q}$. Cependant, pour en déduire que $f=F$ presque partout il faut supposer $\mu$ $\sigma$-finie. 
+  
+  En effet,  supposons que $F$ et $f$ ne sont pas égales presque partout. Alors il existe $0<\varepsilon<1$ tel que $|F-f|>\varepsilon$ sur un $E\subset X$ avec $\varepsilon < \mu(E) < 1$ (c'est pour cette dernière inégalité qu'on utilise le fait que $\mu$ est $\sigma$-finie). Posons alors $g = \frac{\left| F-f \right|}{F-f} \mathbf 1_E \in \mathrm \mathrm L^{q}$. On a alors $0 = \int (F-f) g = \int |F-f| > \varepsilon^{2}$ ce qui est absurde.
+\end{rem}
+
+\bibliographystyle{siam}
+\bibliography{refsnote} 
+
+
+
+\end{document}
