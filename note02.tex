@@ -22,7 +22,7 @@ Or avec notre convention on a pour tout $(f,g)\in (\mathrm L^{2})^{2}$, $\wideha
 
 Faisons un petit détour par les probabilités. Prenons $X_1,\dots,X_n$ des variables indépendantes uniformes sur $[-1,1]$. La loi de $S_n \defeq \frac{X_1+\cdots+X_n}{n}$ est alors connue, c'est une loi de \emph{Bates} (voire par exemple \cite{JKB} pour la densité sur $[0,1]$ puis faire une transformation affine pour passer sur $[-1,1]$)) qui a pour densité 
 \[ g_{n} \defeq  \frac 12 \frac{n}{2(n-1)!}  \mathbf 1_{[-1,1]} \sum_{k=0}^{n} (-1)^{k} \binom nk \left( n\frac{x+1}{2}- k \right)^{n-1} \mathrm{sgn}\left( n\frac{x+1}{2}- k \right) \]
-où $\mathrm{sgn}$ signifie \emph{signe}. Remarquons que $\hat f = \underbrace{\frac 12 \mathbf 1_{[-1,1]}}_{\defeq \hat g} 2\pi$ où $\hat g$ est la densité des $X_i$. Ainsi $\hat g \ast \cdots \ast \hat g$ qui est la densité de $nS_n$ vérifie (effet d'une transformation affine sur la densité) : 
+où $\mathrm{sgn}$ signifie \emph{signe}, avec la convention $\text{sgn}(0)=0$. Remarquons que $\hat f = \underbrace{\frac 12 \mathbf 1_{[-1,1]}}_{\defeq \hat g} 2\pi$ où $\hat g$ est la densité des $X_i$. Ainsi $\hat g \ast \cdots \ast \hat g$ qui est la densité de $nS_n$ vérifie (effet d'une transformation affine sur la densité) : 
 \[ \left( \hat g \ast \cdots \ast \hat g \right)(x) = \frac 1n g_{n}\left( \frac xn \right) =  \frac 1{4(n-1)!} \mathbf 1_{[-1,1]}(x) \sum_{k=0}^{n} (-1)^{k} \binom nk \left( \frac{x+n}{2}-k \right)^{n-1} \mathrm{sgn} \left( \frac{x+n}{2}-k  \right) \] 
 donc \[ \left( \hat g\ast \cdots \ast \hat g \right)(0) = \frac 1{4(n-1)!} \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn} \left( \frac n2 - k \right). \]
 
