@@ -3,7 +3,7 @@
 \entetenote{Calcul de $\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x$ via la loi de Bates}{2}{}
 
 Il est bien connu que $\ds \int_{0}^{+\infty} \frac{\sin(x)}{x} \d x = \frac{\pi}{2}$ est une intégrale semi-convergente au sens de Riemann. Montrons que pour tout $n\in\N^{*}$ on a 
-\[ \ds\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x = \] 
+\[ \ds\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x = \frac{\pi}{4(n-1)!}  \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn}\left( \frac n2 - k \right)\] 
 
 \begin{proof}
   Nous allons utiliser la transformée de Fourier des fonctions $\mathrm L^{2}$ avec la convention suivante : 
