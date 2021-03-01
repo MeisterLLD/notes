@@ -2,36 +2,29 @@
 \begin{document}
 \entetenote{Calcul de $\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x$ via la loi de Bates}{2}{}
 
-Il est bien connu que $\ds \int_{0}^{+\infty} \frac{\sin(x)}{x} \d x = \frac{\pi}{2}$ est une intégrale semi-convergente au sens de Riemann. Montrons que pour tout $n\in\N^{*}$ on a 
+Il est bien connu que $\int_{0}^{+\infty} \frac{\sin(x)}{x} \d x = \frac{\pi}{2}$ est une intégrale semi-convergente au sens de Riemann. Montrons que pour tout $n\in\N^{*}$ on a 
 \[ \ds\int_0^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n}\d x = \frac{\pi}{4(n-1)!}  \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn}\left( \frac n2 - k \right)\] 
 
 \begin{proof}
   Nous allons utiliser la transformée de Fourier des fonctions $\mathrm L^{2}$ avec la convention suivante : 
 \[ \hat f(\xi) = \int_{-\infty}^{+\infty} f(x) e^{-ix \xi} \d x. \]
 
-Soit $n\geq 1$. Notons $f\colon x \mapsto \frac{\sin(x)}{x}$. Alors $f\in\mathrm L^{2}(\R)$ et il est bien connu qu'avec notre convention, 
-\begin{equation}
-\label{hatf}
-\hat f = \pi \mathbf 1_{[-1,1]}
-\end{equation}
-Remarquons maintenant que par parité, 
+Soit $n\geq 1$. Notons $f\colon x \mapsto \frac{\sin(x)}{x}$. Alors $f\in\mathrm L^{2}(\R)$ et il est bien connu qu'avec notre convention, $\hat f = \pi \mathbf 1_{[-1,1]}$. Remarquons maintenant que par parité, 
 \begin{equation}
   \label{in1}
   I_n \defeq \int_{0}^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n} \d x = \frac 12 \int_{-\infty}^{+\infty} \left( \frac{\sin(x)}{x} \right)^{n} \d x = \frac 12 \widehat{f^{n}}(0). 
 \end{equation}
-Or avec notre convention on a pour tout $(f,g)\in (\mathrm L^{2})^{2}$, 
-\[ \widehat{fg}= \frac 1{2\pi} \hat f \ast \hat g \]
-où $\ast$ désigne le produit de convolution, si bien que \eqref{in1} devient  
+Or avec notre convention on a pour tout $(f,g)\in (\mathrm L^{2})^{2}$, $\widehat{fg}= \frac 1{2\pi} \hat f \ast \hat g$ (où $\ast$ désigne le produit de convolution), si bien que \eqref{in1} devient  
 \begin{equation}
   \label{in2}
   I_n = \frac 12 \frac{1}{(2\pi)^{n-1}} \left( \hat f\ast \cdots \ast \hat  f \right)(0).
 \end{equation}
 
-Faisons un petit détour par les probabilités. Prenons $X_1,\dots,X_n$ des variables indépendantes uniformes sur $[-1,1]$. La loi de $S_n \defeq \frac{X_1+\cdots+X_n}{n}$ est alors connue, c'est une loi de \emph{Bates} qui a pour densité 
+Faisons un petit détour par les probabilités. Prenons $X_1,\dots,X_n$ des variables indépendantes uniformes sur $[-1,1]$. La loi de $S_n \defeq \frac{X_1+\cdots+X_n}{n}$ est alors connue, c'est une loi de \emph{Bates} (voire par exemple \cite{JKB} pour la densité sur $[0,1]$ puis faire une transformation affine pour passer sur $[-1,1]$)) qui a pour densité 
 \[ g_{n} \defeq  \frac 12 \frac{n}{2(n-1)!}  \mathbf 1_{[-1,1]} \sum_{k=0}^{n} (-1)^{k} \binom nk \left( n\frac{x+1}{2}- k \right)^{n-1} \mathrm{sgn}\left( n\frac{x+1}{2}- k \right) \]
 où $\mathrm{sgn}$ signifie \emph{signe}. Remarquons que $\hat f = \underbrace{\frac 12 \mathbf 1_{[-1,1]}}_{\defeq \hat g} 2\pi$ où $\hat g$ est la densité des $X_i$. Ainsi $\hat g \ast \cdots \ast \hat g$ qui est la densité de $nS_n$ vérifie (effet d'une transformation affine sur la densité) : 
 \[ \left( \hat g \ast \cdots \ast \hat g \right)(x) = \frac 1n g_{n}\left( \frac xn \right) =  \frac 1{4(n-1)!} \mathbf 1_{[-1,1]}(x) \sum_{k=0}^{n} (-1)^{k} \binom nk \left( \frac{x+n}{2}-k \right)^{n-1} \mathrm{sgn} \left( \frac{x+n}{2}-k  \right) \] 
-donc \[ \left( \hat g\ast \cdots \ast \hat g \right)(0) = \frac 1{4(n-1)!} \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn} \left( \frac n2 - k \right) \]
+donc \[ \left( \hat g\ast \cdots \ast \hat g \right)(0) = \frac 1{4(n-1)!} \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn} \left( \frac n2 - k \right). \]
 
 Enfin, par \eqref{in2} comme $\hat f = \pi \hat g$ on récupère 
 \[ I_n = \frac 12 \frac{(2\pi)^{n}}{(2\pi)^{n-1}} \left( \hat g\ast \cdots \ast \hat  g \right)(0)  =  \frac{\pi}{4(n-1)!}  \sum_{k=0}^{n} (-1)^{k}\binom nk \left( \frac n2 - k \right)^{n-1}\mathrm{sgn}\left( \frac n2 - k \right) .  \]
