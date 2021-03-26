@@ -1,0 +1,35 @@
+\documentclass{notes}
+\begin{document}
+\entetenote{Paul Lévy, Fermat-Wiles et une somme.}{3}{}
+
+Dans \cite{Levy}, Paul Lévy affirme (sans la démontrer) l'équivalence entre l'identité suivante
+\[ \sum_{p=3}^{+\infty} \frac{1}{p^{2}} \int_{0}^{2\pi} \left( \sum_{n=1}^{+\infty} \frac{\cos\left( n^{p }x \right)}{n^{2}} \right)^{3}  \d x = 0  \]
+et le théorème de Fermat-Wiles (seulement Fermat à l'époque). On détaille le sens direct ici.
+
+Montrons en fait que pour tout entier $p\geq 3$, 
+\[ \int_{0}^{2\pi} \left( \sum_{n=1}^{+\infty} \frac{\cos\left( n^{p }x \right)}{n^{2}} \right)^{3}  \d x = 0 .  \]
+Commençons déjà par remarquer que la série de fonctions sous l'intégrale converge normalement -- et donc son cube, uniformément -- sur $[0,2\pi]$. Ainsi il suffit de vérifier que pour tout entier $N\geq 1$ on a 
+\[  \int_{0}^{2\pi}   \left( \sum_{n=1}^{N} \cos(n^{p}x) \right)^{3} \d x = 0. \]
+Pour cela, il est suffisant de montrer que si $n_1,n_2,n_3$ désignent des entiers supérieurs ou égaux à $1$ alors 
+\[ \int_{0}^{2\pi} \cos(n_1^{p} x)\cos(n_2^{p}x) \cos(n_3^{p}x) \d x = 0.\]
+
+L'identité pour tout réels $r,s,t$ 
+\[\cos r \cos s \cos t = \frac 14 \left( \cos(r+s+t)+\cos(s+t-r) + \cos(t+r-s) + \cos(r+s+t) \right)\]
+permet de primitiver par rapport à $x$ la quantité $ \cos(ax)\cos(bx)\cos(cx) $  en 
+\[ \frac 12 \left[    \frac{\sin \left( (a+b-c)x \right)  }{a+b-c} + \frac{\sin\left( (b+c-a)x \right)}{b+c-a}  + \frac{\sin\left( (c+a-b) x\right)  }{c+a-b} + \frac{\sin\left( (a+b+c)x \right)}{a+b+c}    \right] \]
+si bien qu'avec $a=n_1^{p},\ b=n_2^{p},\ c=n_3^{p}$ et $x=2\pi$ la quantité ci-dessus est nulle dès lors que $a+b-c \neq 0$, $b+c-a \neq 0$, $c+a-b \neq 0$ ce qui est vrai par le théorème de Fermat-Wiles car $p \geq 3$.  
+
+
+\begin{rem}
+  La réciproque demande plus de travail, (remarquons par exemple que nous n'avons pas utilisé le facteur $\frac{1}{p^{2}}$. En fait cette identité est une façon de compter les solutions à l'équation de Fermat-Wiles. Pour aller plus loin autour de cette équivalence, on peut se renseigner sur la méthode du cercle de Hardy et Littlewood \cite{HW}.   Je remercie enfin Antoine Chambert-Loir qui m'a montré cet article de Paul Lévy.
+\end{rem}
+
+
+
+
+\bibliographystyle{siam}
+\bibliography{refsnote} 
+
+
+
+\end{document}
