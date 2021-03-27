@@ -9,7 +9,7 @@ et le théorème de Fermat-Wiles (seulement Fermat à l'époque). On détaille l
 Montrons en fait que pour tout entier $p\geq 3$, 
 \[ \int_{0}^{2\pi} \left( \sum_{n=1}^{+\infty} \frac{\cos\left( n^{p }x \right)}{n^{2}} \right)^{3}  \d x = 0 .  \]
 Fixons $p$ un tel entier. Commençons déjà par remarquer que la série de fonctions sous l'intégrale converge normalement -- et donc son cube, uniformément -- sur $[0,2\pi]$. Ainsi il suffit de vérifier que pour tout entier $N\geq 1$ on a 
-\[  \int_{0}^{2\pi}   \left( \sum_{n=1}^{N} \cos(n^{p}x) \right)^{3} \d x = 0. \]
+\[  \int_{0}^{2\pi}   \left( \sum_{n=1}^{N} \frac{\cos(n^{p}x)}{n^{2}} \right)^{3} \d x = 0. \]
 Pour cela, il est suffisant de montrer que si $n_1,n_2,n_3$ désignent des entiers supérieurs ou égaux à $1$ alors 
 \[ \int_{0}^{2\pi} \cos(n_1^{p} x)\cos(n_2^{p}x) \cos(n_3^{p}x) \d x = 0.\]
 
